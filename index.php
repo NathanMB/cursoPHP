@@ -1,5 +1,7 @@
 <?php
 
+require_once ('header.php');
+
 function somar($numero1, $numero2, $numero3 = 0) {
     $total = $numero1 + $numero2 + $numero3;
     return $total;
@@ -30,5 +32,16 @@ function dividir($valor) {
 }
 
 echo $exemplo = dividir(100); 
+
+echo '<hr/>';
+
+echo date('d/m/Y H:i:s  z');
+
+echo '<hr/>';
+
+$data = date('Y/m/d');
+if (setlocale(LC_TIME, 'pt')) {
+    echo strftime("%A", strtotime($data));
+}
 
 ?>
