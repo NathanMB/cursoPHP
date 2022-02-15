@@ -1,11 +1,16 @@
 <?php
-session_start();
 
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+echo "<pre>";
+print_r($_FILES);
 
-if($nome){
-    echo "Olá, ".$nome.' - ';
+$permitidos = ['text/plain'];
+
+if(in_array($_FILES['arquivo']['type'], $permitidos)){
+    $nome = md5(time().rand(0, 100).'.txt');
+    move_uploaded_file($_FILES['arquivo']['tmp_name'], 'pasta/'.$nome);
+    echo 'Arquivo permitido';
+}else{
+    echo 'Arquivo não permitido';
 }
-?>
 
-<a href="sair.php">Sair</a>
+?>
