@@ -1,16 +1,14 @@
 <?php
-require('header.php');
-require('calculadora.php');
 
-$calc = new Calculadora();
-$calc->add(12);
-$calc->add(2);
-$calc->sub(1);
-$calc->multiply(3);
-$calc->divide(2);
-$calc->add(0.5);
+class Quadrado{
 
-echo "Total: ".$calc->total();
+}
+class Circulo{
 
-$calc->clear();
+}
+
+$quadrada = new Quadrado(5,5);
+$circulo  = new Circulo(7);
+
 ?>
+
