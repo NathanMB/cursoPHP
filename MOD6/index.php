@@ -1,14 +1,14 @@
 <?php
+require('header.php');
+require('vendor/autoload.php');
 
-class Quadrado{
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
-}
-class Circulo{
+// create a log channel
+$log = new Logger('name');
+$log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
 
-}
-
-$quadrada = new Quadrado(5,5);
-$circulo  = new Circulo(7);
-
-?>
-
+// add records to the log
+$log->warning('Foo');
+$log->error('Bar');
