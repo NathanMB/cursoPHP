@@ -1,6 +1,7 @@
 <?php
 require 'config.php';
 require 'dao/UsuarioDaoMysql.php';
+
 $usuarioDao = new UsuarioDAOMySQL($pdo);
 
 $id = filter_input(INPUT_POST, 'id');
